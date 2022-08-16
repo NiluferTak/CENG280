@@ -1,0 +1,54 @@
+input: '10111101'
+blank: ' '
+start state: 0
+table:
+    0:
+      0       : {write: X, R: 1}
+      X       : {write: X, R: 7}
+      Y       : {write: Y, R: 7}
+      ' '     : {write: ' ', L: accept}
+      1       : {write: Y, R: 4}
+      
+     
+
+    1:
+      0      : {write: 0, R: 1}
+      1    : {write: 1, R: 1}
+      ' '    : {write: ' ', L: 2}
+      X    : {write: X, L: 2}
+      Y    : {write: Y, L: 2}
+    2:
+      0    : {write: X, L: 3}
+      
+    3:
+      0    : {write: 0, L: 3}
+      1      : {write: 1 , L: 3}
+      X      : {write: X , R: 0}
+      
+    4:
+      0      : {write: 0, R: 4}
+      1    : {write: 1, R: 4}
+      ' '    : {write: ' ', L: 5}
+      X    : {write: X, L: 5}
+      Y    : {write: Y, L: 5}
+    5:
+      1    : {write: Y, L: 6}
+    6:
+      0    : {write: 0, L: 6}
+      1      : {write: 1 , L: 6}
+      Y      : {write: Y , R: 0}  
+    7:
+      
+      ' '      : {write: ' ' , R: accept}
+      X      : {write: X , R: 7}
+      Y      : {write: Y , R: 7}
+      
+  
+    accept:
+positions:
+  '0': {x: 223.76, y: 248.23}
+  '1': {x: 397.86, y: 244.62}
+  '2': {x: 517.9, y: 321.59}
+  '3': {x: 513.62, y: 182.91}
+  '4': {x: 624.06, y: 247.45}
+  accept: {x: 397.61, y: 406.43}

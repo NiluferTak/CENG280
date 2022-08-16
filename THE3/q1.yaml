@@ -1,0 +1,31 @@
+input: ' 000111'
+blank: ' '
+start state: 0
+table:
+    0:
+      0       : {write: A, R: 1}
+      B       : {write: B, R: 3}
+      ' '     : {write: ' ', L: accept}
+      
+     
+
+    1:
+      0      : {write: 0, R: 1}
+      B      : {write: B, R: 1}
+      1    : {write: B, L: 2}
+    2:
+      0    : {write: 0, L: 2}
+      B     : {write: B,L: 2 }
+      A     : {write: A,R: 0 }
+    3:
+      ' '    : {write: ' ', L: accept}
+      B      : {write: B, R: 3}
+  
+    accept:
+positions:
+  '0': {x: 223.76, y: 248.23}
+  '1': {x: 397.86, y: 244.62}
+  '2': {x: 517.9, y: 321.59}
+  '3': {x: 513.62, y: 182.91}
+  '4': {x: 624.06, y: 247.45}
+  accept: {x: 397.61, y: 406.43}
